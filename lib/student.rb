@@ -50,8 +50,9 @@ class Student
 
 
   def self.create(hash)
-    new_student_id = Student.new(hash[:name], hash[:grade]).save
-    Student.all.find {  |student| student.id == new_student_id }
+    new_student = Student.new(hash[:name], hash[:grade])
+    new_student.save
+    return new_student
   end
 
 
